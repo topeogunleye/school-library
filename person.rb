@@ -7,5 +7,9 @@ class Animal
     attr_accessor :name, :age
     attr_reader :id
 
+    def is_of_age? 
+      return age >= 18 ? true : false
+    end
+
   end
 end
