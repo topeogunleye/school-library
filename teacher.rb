@@ -11,6 +11,6 @@ class Teacher < Person
   end
 end
 
-teacher = Teacher.new("Maths")
+teacher = Teacher.new('Maths')
 
 puts teacher.can_use_services?
