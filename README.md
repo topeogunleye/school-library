@@ -3,26 +3,16 @@ building your school library app with Ruby programming language
 
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-![screenshot]()
-
 Additional description about the project and its features.
 
 ## Built With
 
 - Ruby
-
-## Video Demo
-
-[Video Demo](https://www.loom.com/share/86a73ca9798443a2af325321d206d7ab)
-## Live Demo
-
-[Live Demo Link]()
-
 ## Getting Started
 To get a local copy up and running, follow the steps in Setup below.
 
 ### Prerequisites
-Basic knowledge of HTML, CSS, and JavaScript.
+Basic knowledge of Ruby
 
 ### Setup
 If you installed git you can clone the code to your machine, or download a ZIP of all the files directly.
@@ -47,16 +37,6 @@ git clone https://github.com/topeogunleye/school-library.git
 
    ```sh
    ruby person.rb
-   ```
-
-3. Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
-
-## 🚀 Building and Running for Production
-
-1. Generate a full static production build
-
-   ```sh
-   npm run build
    ```
 ### Install
 
