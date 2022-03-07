@@ -5,6 +5,7 @@ class Animal
     @age = age
 
     attr_accessor :name, :age
+    attr_reader :id
 
   end
 end
