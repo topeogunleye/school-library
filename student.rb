@@ -1,13 +1,14 @@
-require './person.rb'
+# frozen_string_literal: true
 
-class Student < Person 
+require './person'
+
+class Student < Person
   def initialize(classroom)
-    super("student")
+    super('student')
     @classroom = classroom
   end
 
   def play_hooky
-    return "¯\(ツ)/¯"
+    "¯\(ツ)/¯"
   end
-
 end
