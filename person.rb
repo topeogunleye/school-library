@@ -11,5 +11,7 @@ class Animal
       return age >= 18 ? true : false
     end
 
+    private :is_of_age?
+
   end
 end
