@@ -8,11 +8,11 @@ class Student < Person
   end
 
   def play_hooky
-   "¯\(ツ)/¯"
+    "¯\(ツ)/¯"
   end
 end
 
-student = Student.new("class1", "Victor")
+student = Student.new('class1', 'Victor')
 
-puts student.play_hooky()
+puts student.play_hooky
 puts student.name
