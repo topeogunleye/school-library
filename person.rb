@@ -11,14 +11,12 @@ class Person
     @age = age
   end
 
-  # rubocop:disable Naming/PredicateName
-  def is_of_age?
+  def of_age?
     age >= 18
   end
 
   private :is_of_age?
 
-  # rubocop:enable Naming/PredicateName
   def can_use_services?
     is_of_age? || parent_permission ? true : false
   end
