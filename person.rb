@@ -13,5 +13,9 @@ class Animal
 
     private :is_of_age?
 
+    def can_use_services? 
+      return is_of_age? || parent_permission ? true : false
+    end
+    
   end
 end
