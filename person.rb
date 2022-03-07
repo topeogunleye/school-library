@@ -15,10 +15,9 @@ class Person
     of_age? || parent_permission ? true : false
   end
 
-  private 
+  private
 
   def of_age?
     age >= 18
   end
- 
 end
