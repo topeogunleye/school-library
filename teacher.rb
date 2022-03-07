@@ -1,4 +1,4 @@
-require './teacher'
+require './person'
 # Teacher Class Inheriting From Person Class
 class Teacher < Person
   def initialize(specialization)
@@ -10,3 +10,7 @@ class Teacher < Person
     true
   end
 end
+
+teacher = Teacher.new("Maths")
+
+puts teacher.can_use_services?
