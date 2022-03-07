@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require './teacher'
 # Teacher Class Inheriting From Person Class
 class Teacher < Person
