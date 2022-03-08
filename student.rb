@@ -1,8 +1,8 @@
 require './person'
 # Student Class Inheriting From Person Class
 class Student < Person
-  def initialize(classroom, age, name = 'Unknown', parent_permission = true)
-    super(age, name, parent_permission)
+  def initialize(classroom, age, name = 'Unknown', parent_permission: true)
+    super(age, name, parent_permission: true)
     @classroom = classroom
     @age = age
     @name = name
@@ -14,7 +14,7 @@ class Student < Person
   end
 end
 
-student = Student.new('Class1', 14, 'Trent', false)
+student = Student.new('Class1', 19, 'Trent', parent_permission: false)
 
 puts student.play_hooky
 puts student.name
