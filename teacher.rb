@@ -1,8 +1,8 @@
 require './person'
 # Teacher Class Inheriting From Person Class
 class Teacher < Person
-  def initialize(specialization, age, name = 'Unknown', parent_permission = true)
-    super(age, name, parent_permission)
+  def initialize(specialization, age, name = 'Unknown', parent_permission: true)
+    super(age, name, parent_permission: true)
     @specialization = specialization
     @age = age
     @name = name
@@ -14,6 +14,6 @@ class Teacher < Person
   end
 end
 
-teacher = Teacher.new('Science', 20, 'Jon Snow', false)
+teacher = Teacher.new('Science', 20, 'Jon Snow', parent_permission: false)
 
 puts teacher.can_use_services?
