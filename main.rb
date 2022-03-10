@@ -8,7 +8,7 @@
 
 require './classroom'
 require './person'
-require './teacher.rb'
+require './teacher'
 require './student'
 
 def list_books
@@ -50,6 +50,8 @@ end
 
 def main
   # rubocop:disable Metrics/CyclomaticComplexity
+  # rubocop:disable Metrics/MethodLength
+
   puts 'Welcome to the Library App' 
   puts 'What would you like to do?'
   puts '1. List Books'
@@ -59,7 +61,6 @@ def main
   puts '5. Create a rental'
   puts '6. List all rentals for a given person id'
   puts '7. Quit'
-  # rubocop:enable RuleByName/CyclomaticComplexity
   choice = gets.chomp.to_i
 
   case choice
@@ -86,7 +87,8 @@ def main
     puts 'Invalid choice'
   end
 
-  main
+  # rubocop:enable RuleByName/CyclomaticComplexity
+  # rubocop:enable Metrics/MethodLength
 end
 
 main
