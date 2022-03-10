@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Person Class
 require './namable'
 
@@ -99,6 +101,3 @@ class TrimmerDecorator < Decorator
     @component.correct_name[0..9]
   end
 end
-
-
-
