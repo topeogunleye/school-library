@@ -49,7 +49,7 @@ def list_rentals(_person_id)
 end
 
 def main
-  puts 'Welcome to the Library App'
+  puts 'Welcome to the Library App' 
   puts 'What would you like to do?'
   puts '1. List Books'
   puts '2. List People'
