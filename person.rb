@@ -1,5 +1,13 @@
 # Person Class
-class Person
+import "./namable"
+
+class Person < Namable
+  def initialize(name)
+    # assign a namable object from params to an instance variable
+    super(name)
+    @name = name
+  end
+
   attr_accessor :name, :age
   attr_reader :id
 
