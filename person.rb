@@ -7,7 +7,7 @@ class Person < Namable
     @name
   end
 
-  attr_accessor :name, :age
+  attr_accessor :name, :age, :rentals
   attr_reader :id
 
   def initialize(age,
@@ -18,6 +18,12 @@ class Person < Namable
     @age = age
     @name = name
     @parent_permission = parent_permission
+    @rentals = []
+  end
+
+  def add_rental(rental)
+    @rentals.push(rental)
+    rental.person = self
   end
 
   def can_use_services?
@@ -28,6 +34,30 @@ class Person < Namable
 
   def of_age?
     age.to_i >= 18.to_i
+  end
+end
+
+class Rental
+  attr_accessor :book, :person
+
+  def initialize(book, person)
+    @book = book
+    @person = person
+  end
+end
+
+class Book
+  attr_accessor :title, :author, :rentals
+
+  def initialize(title, author)
+    @title = title
+    @author = author
+    @rentals = []
+  end
+
+  def add_rental(rental)
+    @rentals.push(rental)
+    rental.book = self
   end
 end
 
