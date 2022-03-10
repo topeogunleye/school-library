@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Create methods that do the following:
 # List all books.
 # List all people.
@@ -10,6 +8,8 @@
 
 require './classroom'
 require './person'
+require './teacher.rb'
+require './student'
 
 def list_books
   Book.all.each do |book|
@@ -71,14 +71,14 @@ def main
     puts '1. Teacher'
     puts '2. Student'
     type = gets.chomp.to_i
-    create_person('teacher') if type == 1
-    create_person('student') if type == 2
+    puts create_person('teacher') if type == 1
+    puts create_person('student') if type == 2
   when 4
-    create_book
+    puts create_book
   when 5
-    create_rental('10/10/10', create_book, create_person('student'))
+    puts create_rental('10/10/10', create_book, create_person('student'))
   when 6
-    list_rentals(1)
+    puts list_rentals(1)
   when 7
     puts 'Goodbye!'
   else
@@ -87,3 +87,5 @@ def main
 
   main
 end
+
+main
