@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Create the has-many/belongs-to relationship between Classroom and Student. The following should be implemented:
 # Create the has-many side (a classroom has many students).
 # Create the belongs-to side (a student belongs to a classroom).
