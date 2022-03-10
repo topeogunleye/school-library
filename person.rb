@@ -69,3 +69,12 @@ class TrimmerDecorator < Decorator
     @component.correct_name[0..9]
   end
 end
+
+class Classroom
+  # @label instance variable, should be initialized in the constructor.
+
+  def initialize(label)
+    @label = label
+  end
+
+end
