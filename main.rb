@@ -49,6 +49,7 @@ def list_rentals(_person_id)
 end
 
 def main
+  # rubocop:disable Metrics/CyclomaticComplexity
   puts 'Welcome to the Library App' 
   puts 'What would you like to do?'
   puts '1. List Books'
@@ -58,7 +59,7 @@ def main
   puts '5. Create a rental'
   puts '6. List all rentals for a given person id'
   puts '7. Quit'
-
+  # rubocop:enable RuleByName/CyclomaticComplexity
   choice = gets.chomp.to_i
 
   case choice
