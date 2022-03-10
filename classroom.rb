@@ -14,3 +14,11 @@ class Classroom
   end
 
 end
+
+# Create the belongs-to side (a Student belongs to a classroom).
+class Student
+  attr_accessor :classroom
+
+  
+
+end
