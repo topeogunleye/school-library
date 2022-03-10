@@ -13,7 +13,7 @@ class Person < Namable
   def initialize(age,
                  name = 'Unknown',
                  parent_permission: true)
-    super(name, age, parent_permission: true)
+    super(name)
     @id = Random.rand(1..1000)
     @age = age
     @name = name
