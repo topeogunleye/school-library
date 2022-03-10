@@ -21,18 +21,6 @@ class Classroom
   end
 end
 
-# class Student
-#   attr_accessor :classroom
-
-#   def initialize(classroom)
-#     @classroom = classroom
-#   end
-# end
-
-# Create a class Book with the following:
-# @title and @author instance variables, should be initialized in the constructor.
-# Setters and getters for instance variables (remember about attr_accessor).
-
 class Book
   attr_accessor :title, :author, :rentals
 
@@ -63,24 +51,5 @@ class Rental
   end
 end
 
-# Create the many-to-many (also has-many-through) relationship between Person and Book using the intermediate class Rental. The following should be implemented:
-# Create the has-many side of Book and Rental (a book has many rentals).
-# Create the belongs-to side of Rental and Book (a rental belongs to a book).
-# Create the has-many side of Person and Rental (a person has many rentals).
-# Create the belongs-to side of Rental and Person (a rental belongs to a person).
-
-# class Person
-#   attr_accessor :name, :rentals
-
-#   def initialize(name)
-#     @name = name
-#     @rentals = []
-#   end
-
-#   def add_rental(rental)
-#     @rentals.push(rental)
-#     rental.person = self
-#   end
-# end
 
 
