@@ -73,8 +73,11 @@ end
 class Classroom
   # @label instance variable, should be initialized in the constructor.
 
+  attr_accessor :label
+
   def initialize(label)
     @label = label
   end
+
 
 end
