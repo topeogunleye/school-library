@@ -57,7 +57,6 @@ def list_rentals(_person_id)
   create_rental('10/10/10', create_book, create_person('student'))
 end
 
-# rubocop:disable Metrics/MethodLength
 # rubocop:disable Metrics/CyclomaticComplexity
 # rubocop:disable Metrics/AbcSize
 def main
@@ -99,6 +98,5 @@ def main
 end
 # rubocop:enable Metrics/MethodLength
 # rubocop:enable Metrics/CyclomaticComplexity
-# rubocop:enable Metrics/AbcSize
 
 main
