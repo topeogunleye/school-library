@@ -57,8 +57,8 @@ def list_rentals(_person_id)
   create_rental('10/10/10', create_book, create_person('student'))
 end
 
+# rubocop:disable Metrics/MethodLength
 # rubocop:disable Metrics/CyclomaticComplexity
-# rubocop:disable Metrics/AbcSize
 def main
   puts 'Welcome to the Library App'
   puts 'What would you like to do?'
