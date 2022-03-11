@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 # Create methods that do the following:
 # List all books.
 # List all people.
