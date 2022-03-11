@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-# frozen_string_literal: true
 
 # Create methods that do the following:
 # List all books.
@@ -58,10 +57,10 @@ def list_rentals(_person_id)
   create_rental('10/10/10', create_book, create_person('student'))
 end
 
-def main
   # rubocop:disable Metrics/AbcSize
   # rubocop:disable Metrics/MethodLength
   # rubocop:disable Metrics/CyclomaticComplexity
+def main
   puts 'Welcome to the Library App'
   puts 'What would you like to do?'
   puts '1. List Books'
@@ -97,9 +96,9 @@ def main
   else
     puts 'Invalid choice'
   end
+end
   # rubocop:enable Metrics/AbcSize
   # rubocop:enable Metrics/MethodLength
   # rubocop:enable Metrics/CyclomaticComplexity
-end
 
 main
