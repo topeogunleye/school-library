@@ -59,6 +59,7 @@ end
 
 # rubocop:disable Metrics/MethodLength
 # rubocop:disable Metrics/CyclomaticComplexity
+# rubocop:disable Metrics/AbcSize
 def main
   puts 'Welcome to the Library App'
   puts 'What would you like to do?'
@@ -98,5 +99,6 @@ def main
 end
 # rubocop:enable Metrics/MethodLength
 # rubocop:enable Metrics/CyclomaticComplexity
+# rubocop:enable Metrics/AbcSize
 
 main
