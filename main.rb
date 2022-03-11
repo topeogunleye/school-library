@@ -1,102 +1,150 @@
 #!/usr/bin/env ruby
+require "pry"
 
-# Create methods that do the following:
-# List all books.
-# List all people.
-# Create a person (teacher or student, not a plain Person).
-# Create a book.
-# Create a rental.
-# List all rentals for a given person id.
+require "./classroom"
+require "./person"
+require "./teacher"
+require "./student"
 
-require './classroom'
-require './person'
-require './teacher'
-require './student'
-
-def list_books
-  books = [Book.new('Harry Potter', 'JK Rowling'),
-           Book.new('Lord of the Rings', 'JRR Tolkien'),
-           Book.new('The Hobbit', 'JRR Tolkien')]
-
-  books.each do |book|
-    puts book.title
+class App
+  def initialize
+    @books = []
+    @people = []
+    @rentals = []
   end
-end
 
-def list_people
-  people = [Teacher.new('Pysics', 20, 'Harry Maguire', parent_permission: false),
-            Student.new('Pysics', 20, 'Jon Snow', parent_permission: false)]
+  # def get_user_input
+    
+  # end
 
-  people.each do |person|
-    puts person.name
+  def list_books
+    binding.pry
+    if @books.length != 0
+    @books.each do |book|
+      puts "Book title: #{book.title}"
+      puts "Book author: #{book.author}"
+    end
+    elsif @books.length == 0
+    puts "There are no books in the library"
+    end
+    main
   end
-end
 
-def create_person(type)
-  case type
-  when 'teacher'
-    Teacher.new('Pysics', 20, 'Jon Snow', parent_permission: false)
-  when 'student'
-    Student.new('Class1', 19, 'Trent', parent_permission: false)
+  def list_people
+    @people.each do |person|
+      # case person
+      # when person.subject
+        puts "Teacher name: #{person.name}"
+        puts "Teacher subject: #{person.subject}"
+        puts "Teacher age: #{person.age}"
+      # when person.classroom
+        puts "Student name: #{person.name}"
+        puts "Student classroom: #{person.classroom}"
+        puts "Student age: #{person.age}"
+      # end
+    end
+    main
   end
-end
 
-def create_book
-  Book.new('Harry Potter', 'JK Rowling')
-end
+  def create_person
+    puts "What type of person would you like to create?"
+    puts "1. Teacher"
+    puts "2. Student"
+    type = gets.chomp.to_i
+    if type == 1
+      puts "What subject does the teacher take?"
+      subject = gets.chomp
+      puts "What is the age of the teacher?"
+      age = gets.chomp.to_i
+      puts "What is the name of the teacher?"
+      name = gets.chomp
+      puts "Does the teacher have permission to use the library services?"
+      permission = gets.chomp.to_i
+      @people.push(Teacher.new(subject, age, name, parent_permission: permission))
+    elsif type == 2
+      puts "What classroom is the student?"
+      classroom = gets.chomp
+      puts "What is the age of the student?"
+      age = gets.chomp.to_i
+      puts "What is the name of the student?"
+      name = gets.chomp
+      puts "Does the student have permission to use the library services?"
+      permission = gets.chomp.to_i
+      @people.push(Student.new(classroom, age, name, parent_permission: permission))
+    end
+    main
 
-def create_rental(date, book, person)
-  Rental.new(date, book, person)
-end
+  end
 
-def list_rentals(_person_id)
-  list_books
-  list_people
-  create_person('teacher')
-  create_book
-  create_rental('10/10/10', create_book, create_person('student'))
+  def create_book
+    puts "What is the book title ?"
+    title = gets.chomp
+    puts "What is the book author ?"
+    author = gets.chomp
+    Book.new(title, author)
+
+    @books.push(author, title)
+    main
+  end
+
+  def create_rental
+    put "What is the rental date?"
+    date = gets.chomp
+    put "What is the rental book?"
+    book = gets.chomp
+    put "Who is the rental person?"
+    person = gets.chomp
+
+    @rentals.push(Rental.new(date, book, person))
+    main
+  end
+
+  def list_rentals(_person_id)
+    list_books
+    list_people
+    create_person("teacher")
+    create_book
+    create_rental("10/10/10", create_book, create_person("student"))
+    main
+  end
 end
 
 # rubocop:disable Metrics/MethodLength
-# rubocop:disable Metrics/CyclomaticComplexity
 def main
-  puts 'Welcome to the Library App'
-  puts 'What would you like to do?'
-  puts '1. List Books'
-  puts '2. List People'
-  puts '3. Create a person'
-  puts '4. Create a book'
-  puts '5. Create a rental'
-  puts '6. List all rentals for a given person id'
-  puts '7. Quit'
+  app = App.new
+
+    puts "Welcome to the Library App"
+    puts "What would you like to do?"
+    puts "1. List Books"
+    puts "2. List People"
+    puts "3. Create a person"
+    puts "4. Create a book"
+    puts "5. Create a rental"
+    puts "6. List all rentals for a given person id"
+    puts "7. Quit"
+
   choice = gets.chomp.to_i
 
   case choice
   when 1
-    list_books
+    app.list_books
   when 2
-    list_people
+    app.list_people
   when 3
-    puts 'What type of person would you like to create?'
-    puts '1. Teacher'
-    puts '2. Student'
-    type = gets.chomp.to_i
-    puts create_person('teacher') if type == 1
-    puts create_person('student') if type == 2
+    app.create_person
   when 4
-    puts create_book
+    app.create_book
   when 5
-    puts create_rental('10/10/10', create_book, create_person('student'))
+    app.create_rental("10/10/10", create_book, create_person("student"))
   when 6
-    puts list_rentals(1)
+    puts App.list_rentals(1)
   when 7
-    puts 'Goodbye!'
+    puts "Goodbye!"
     exit
   else
-    puts 'Invalid choice'
+    puts "Invalid choice"
   end
 end
 # rubocop:enable Metrics/MethodLength
-# rubocop:enable Metrics/CyclomaticComplexity
 
 main
