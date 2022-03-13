@@ -56,6 +56,7 @@ class App
     main
   end
 
+  # rubocop:disable Metrics/MethodLength
   def create_person
     puts 'What type of person would you like to create?'
     puts '1. Teacher'
@@ -89,6 +90,8 @@ class App
     end
     main
   end
+  # rubocop:enable Metrics/MethodLength
+
 
   def create_book
     puts 'What is the book title ?'
@@ -120,7 +123,6 @@ end
 
 # rubocop:disable Metrics/MethodLength
 # rubocop:disable Metrics/CyclomaticComplexity
-# rubocop:disable Metrics/AbcSize
 def main
   app = App.new
 
@@ -149,7 +151,6 @@ def main
   end
 end
 # rubocop:enable Metrics/MethodLength
-# rubocop:enable Metrics/AbcSize
 # rubocop:enable Metrics/CyclomaticComplexity
 
 main
