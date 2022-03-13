@@ -103,8 +103,6 @@ class App
   end
 
   def create_rental
-    books = JSON.parse(File.read('books.txt'))
-    persons = JSON.parse(File.read('people.txt'))
     @rentals.push(Rental.new(@date, @book, @person))
     File.write('rentals.txt', @rentals.to_s)
   end
