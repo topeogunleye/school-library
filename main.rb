@@ -91,8 +91,7 @@ class App
     main
   end
   # rubocop:enable Metrics/MethodLength
-
-
+  
   def create_book
     puts 'What is the book title ?'
     title = gets.chomp
