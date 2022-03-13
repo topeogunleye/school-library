@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Person Class
 require './namable'
 

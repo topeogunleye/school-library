@@ -1,0 +1,1 @@
+[#<Student:0x00007f11d86b4838 @name="r", @id=641, @age=2, @parent_permission=0, @rentals=[], @classroom="e">]

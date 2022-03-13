@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-# frozen_string_literal: true
 
 require './classroom'
 require './book'
@@ -122,6 +121,8 @@ class App
 end
 
 # rubocop:disable Metrics/MethodLength
+# rubocop:disable Metrics/CyclomaticComplexity
+# rubocop:disable Metrics/AbcSize
 def main
   app = App.new
 
@@ -150,5 +151,7 @@ def main
   end
 end
 # rubocop:enable Metrics/MethodLength
+# rubocop:enable Metrics/AbcSize
+# rubocop:enable Metrics/CyclomaticComplexity
 
 main
