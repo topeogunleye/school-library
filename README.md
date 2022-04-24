@@ -1,13 +1,12 @@
-# school-library
-building your school library app with Ruby programming language
-
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-Additional description about the project and its features.
+# school-library
+> building your school library app with Ruby programming language
 
 ## Built With
 
 - Ruby
+
 ## Getting Started
 To get a local copy up and running, follow the steps in Setup below.
 
@@ -36,7 +35,7 @@ git clone https://github.com/topeogunleye/school-library.git
 2. Run files locally
 
    ```sh
-   ruby person.rb
+   ruby filename.rb
    ```
 ### Install
 
